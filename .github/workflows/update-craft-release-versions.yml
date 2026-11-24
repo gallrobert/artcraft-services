@@ -16,6 +16,8 @@ concurrency:
 
 jobs:
   update-versions:
+    # Forks must explicitly enable release synchronization and PR creation.
+    if: github.repository == 'storytold/artcraft-services' || vars.ENABLE_CRAFT_RELEASE_SYNC == 'true'
     runs-on: ubuntu-latest
 
     steps:

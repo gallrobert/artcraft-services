@@ -10,6 +10,8 @@ permissions:
 
 jobs:
   wait-for-deploy:
+    # This job checks upstream's production/preview URLs, not deployments of forks.
+    if: github.repository == 'storytold/artcraft-services'
     name: Wait for Cloudflare deploy
     runs-on: ubuntu-latest
     permissions:

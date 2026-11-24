@@ -9,6 +9,8 @@ permissions: {}
 
 jobs:
   deploy:
+    # The production deploy hook belongs to the upstream repository.
+    if: github.repository == 'storytold/artcraft-services'
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
